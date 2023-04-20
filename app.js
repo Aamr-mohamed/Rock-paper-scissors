@@ -1,5 +1,48 @@
-function getComputerChoice(){
-    for(let i=0;i<=5;i++){
+function game(){
+    let playerOneScore=0;
+    let computerScore=0;
+    let gameContinues=true
+    console.log("Rock Paper Scissors")
+    while (gameContinues){
+        let computerSelection=getComputerChoice()
+        let playerSelection=prompt("rock paper scissors") 
+        if (playerSelection==computerSelection){
+            console.log("its a draw")
+        }else if (playerSelection =="rock"){
+            if (computerSelection=="scissors"){
+                console.log("player one won this round")
+                playerOneScore+=1
+            }else{
+                console.log("computer won this round")
+                computerScore+=1
+            }
+        }else if (playerSelection=="scissors"){
+            if (computerSelection=="rock"){
+                console.log("computer won this round")
+                computerScore+=1
+            }else {
+                console.log("player one won this round")
+                playerOneScore+=1
+            }
+        }else if (playerSelection=="paper"){
+            if (computerSelection=="rock"){
+                console.log("computer won this round")
+                computerScore+=1
+            }else{
+                console.log("player one won this round")
+            }
+            }
+        if (playerOneScore>=5){
+            gameContinues=false
+            console.log("Congrates player one won the game")
+        }else if (computerScore>=5){
+            gameContinues=false
+            console.log("computer win the game ...!... ")
+        }    
+        
+    
+    }
+    function getComputerChoice(){
         let computerChoice=Math.floor(Math.random()*10)+1;
         if (computerChoice>7){
             return ('rock')
@@ -7,19 +50,5 @@ function getComputerChoice(){
             return('paper')
         }else
             return ('scissors')
-    }
+        }
 }
-
-
-function firstRoundGame(playerSelection,computerSelection){ 
-    if (playerSelection =="rock" && computerSelection =="scissors"){
-        return ("player one won this round")
-    }else if (playerSelection=="rock" && computerSelection=="paper"){
-        return("player one won this round")
-    }else if (playerSelection=="rock" &&computerSelection=="rock"){
-        return("draw play again")
-    }
-}
-let computerSelection=getComputerChoice()
-let playerSelection="rock"
-console.log(firstRoundGame(playerSelection,computerSelection))
