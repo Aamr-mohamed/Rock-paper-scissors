@@ -5,7 +5,7 @@ function game(){
     console.log("Rock Paper Scissors")
     while (gameContinues){
         let computerSelection=getComputerChoice()
-        let playerSelection=prompt("rock paper scissors") 
+        let playerSelection=prompt("rock paper scissors").toLowerCase(); 
         if (playerSelection==computerSelection){
             console.log("its a draw")
         }else if (playerSelection =="rock"){
