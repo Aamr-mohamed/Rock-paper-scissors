@@ -1,12 +1,12 @@
-function game(){
+function game(){                                                                     //the main game function
     let playerOneScore=0;
     let computerScore=0;
-    let gameContinues=true
+    let gameContinues=true                                                           //The gameOver button ;)
     console.log("Rock Paper Scissors")
-    while (gameContinues){
-        let computerSelection=getComputerChoice()
-        let playerSelection=prompt("rock paper scissors").toLowerCase(); 
-        if (playerSelection==computerSelection){
+    while (gameContinues){                        
+        let computerSelection=getComputerChoice()                                    //Computer random input
+        let playerSelection=prompt("rock paper scissors").toLowerCase();             //The player one input
+        if (playerSelection==computerSelection){                                     //The game rules
             console.log("its a draw")
         }else if (playerSelection =="rock"){
             if (computerSelection=="scissors"){
@@ -42,7 +42,7 @@ function game(){
         
     
     }
-    function getComputerChoice(){
+    /*function getComputerChoice(){                                                 //Computer random input function
         let computerChoice=Math.floor(Math.random()*10)+1;
         if (computerChoice>7){
             return ('rock')
@@ -50,5 +50,9 @@ function game(){
             return('paper')
         }else
             return ('scissors')
-        }
+        }*/
+    function getComputerChoice(){
+        const choices=['rock','paper','scissors']
+        return choices[Math.floor(Math.random()*choices.length)];
+    }
 }
